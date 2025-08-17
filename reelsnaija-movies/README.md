@@ -1,12 +1,116 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ReelNaija – Movie Recommendation App
 
-Currently, two official plugins are available:
+ReelNaija is a modern web app built with **React, Vite, and TailwindCSS**, designed to recommend and display movies. It integrates with the **YouTube API** to fetch trailers and related content.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+##  Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 🔎 Search for movies & trailers
+* 🎥 Watch YouTube trailers directly inside the app
+* ⭐ Recommended movies section
+* 📱 Fully responsive UI (TailwindCSS)
+* ⚡ Fast build with Vite
+
+---
+
+## Tech Stack
+
+* **Frontend Framework**: React + Vite
+* **Styling**: TailwindCSS
+* **API**: YouTube Data API v3
+* **Deployment**: Vercel / Netlify (recommended)
+
+---
+
+## Project Structure
+
+```
+src/
+ ┣ components/
+ ┃ ┣ Navbar.jsx
+ ┃ ┣ Banner.jsx
+ ┃ ┣ MovieRow.jsx
+ ┃ ┣ Footer.jsx
+ ┃ ┗ ReviewSection.jsx
+ ┣ utils/
+ ┃ ┗ youtube.js   # YouTube API helper
+ ┣ App.jsx
+ ┣ main.jsx
+ ┗ index.css
+```
+
+---
+
+## Installation & Setup
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/your-username/reelnaija.git
+   cd reelnaija
+   ```
+
+2. **Install dependencies**
+
+   ```
+   axios
+   react-router-dom
+  
+
+   ```
+
+3. **Set up YouTube API key**
+
+   * Create a `.env` file in the project root
+   * Add:
+
+     ```
+     VITE_YOUTUBE_API_KEY=your_api_key_here
+     ```
+
+4. **Run the project locally**
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Build for production**
+
+   ```bash
+   npm run build
+   ```
+
+---
+
+## Environment Variables
+
+| Variable               | Description          |
+| ---------------------- | -------------------- |
+| `VITE_YOUTUBE_API_KEY` | Your YouTube API key |
+
+---
+
+## Contributing
+
+Contributions are welcome! If you’d like to improve features or fix bugs:
+
+1. Fork the repo
+2. Create a new branch (`feature/awesome-update`)
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## License
+
+This project is licensed under the **MIT License** – feel free to use and modify.
+
+---
+
+## Author
+
+Built with ❤️ by **Salayo – ReelNaija**
+
+--
