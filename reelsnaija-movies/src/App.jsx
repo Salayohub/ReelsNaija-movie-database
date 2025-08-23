@@ -1,23 +1,29 @@
-import React from 'react'
+// App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import SearchResults from "./pages/SearchResults";
+import VideoDetail from "./pages/VideoDetail";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
-import './App.css'
-
-function App() {
-  
-
+export default function App() {
   return (
-    <>
-    {/* Navbar */}
-
-
-    {/* BodyLayout */}
-
-
-    {/* Footer */}
-      
-      <h1 className='text-6xl text-red-500 bg-amber-400'>tailwind is working</h1>
-    </>
-  )
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col bg-gray-950 text-white">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/search" element={<SearchResults />} />
+            <Route path="/video/:id" element={<VideoDetail />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
 }
-
-export default App
