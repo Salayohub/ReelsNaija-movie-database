@@ -4,7 +4,7 @@ export default function MovieCard({ video }) {
   const videoId = id?.videoId;
 
   return (
-    <div className="w-64 bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+    <div className=" w-64 bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
       {/* Thumbnail */}
       <img
         src={snippet?.thumbnails?.medium?.url}

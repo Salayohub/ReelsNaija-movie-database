@@ -11,7 +11,7 @@ export default function MovieRow({ query, title }) {
   return (
     <section className="px-6 py-10">
       <h2 className="text-2xl font-bold mb-4">{title}</h2>
-      <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+      <div className="flex gap-4 overflow-x-auto -scroll-mr-12">
         {videos.map((video) => (
           <MovieCard key={video.id.videoId} video={video} />
         ))}

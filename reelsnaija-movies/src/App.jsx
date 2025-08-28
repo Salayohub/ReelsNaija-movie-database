@@ -11,7 +11,7 @@ import About from "./pages/About";
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col bg-gray-950 text-white">
+      <div className="min-h-screen flex flex-col bg-green-700 py-2 px-4 text-white">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -21,6 +21,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
           </Routes>
+    
         </main>
         <Footer />
       </div>

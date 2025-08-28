@@ -1,8 +1,8 @@
 // components/Hero.jsx
 export default function Hero() {
   return (
-    <section className="relative h-[70vh] bg-cover bg-center flex items-center justify-start px-10"
-      style={{ backgroundImage: `url('https://i.ibb.co/5FRwQkP/nollywood-banner.jpg')` }}
+    <section className="relative h-[90vh] bg-cover bg-center flex items-center justify-start px-10"
+      style={{ backgroundImage: `url(https://img.youtube.com/vi/864HSWFIBY4/maxresdefault.jpg)` }}
     >
       <div className="bg-black bg-opacity-50 p-6 rounded-xl max-w-xl">
         <h1 className="text-4xl font-bold mb-4">Discover Nollywood & Beyond</h1>
