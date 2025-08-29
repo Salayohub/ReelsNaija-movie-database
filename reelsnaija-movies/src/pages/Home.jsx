@@ -1,43 +1,47 @@
 import Hero from "../components/Hero";
 import MovieRow from "../components/MovieRow";
 import AboutHome from "../components/AboutHome";
-
+import JoinCommunity from "../components/Community";
+import DiscoveryBanner from "../components/DiscoveryBana";
 export default function Home() {
   return (
     <div>
       <Hero />
       <AboutHome />
-      <div>
-      <h1 >Recommended Movies</h1>
-      <p>Handpicked just for you from the hottest Nollywood hits to
-        global blockbusters.This are movies you dont won't want to miss.
+      <div className="text-center w-full flex flex-col gap-3 bg-amber-600 pt-17 mb-3.5">
+      <h1 className="text-yellow-300 font-bold text-2xl">Recommended Movies</h1>
+      <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
+        global blockbusters.<br />This are movies you dont won't want to miss.
       </p>
-      <MovieRow query="Nollywood movies 2025" title="Trending Nollywood" />
+      <MovieRow title="" fetchQuery="Nollywood movies" />
       </div>
 
-      <div>
-        <h1 >Recommended Movies</h1>
-      <p>Handpicked just for you from the hottest Nollywood hits to
-        global blockbusters.This are movies you dont won't want to miss.
+      <div className="text-center w-full flex flex-col gap-3 bg-amber-600 pt-17 mb-3.5">
+      <h1 className="text-yellow-300 font-bold text-2xl">Trending Nollywood</h1>
+      <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
+        global blockbusters.<br />This are movies you dont won't want to miss.
       </p>
-      <MovieRow query="Nigerian comedy movies" title="Comedy" />
+      <MovieRow query="Nollywood movies 2025" title="" />
       </div>
 
-       <div>
-        <h1 >Recommended Movies</h1>
-      <p>Handpicked just for you from the hottest Nollywood hits to
-        global blockbusters.This are movies you dont won't want to miss.
+      <DiscoveryBanner />
+
+       <div className="text-center w-full flex flex-col gap-3 bg-amber-600 pt-17 mb-3.5">
+      <h1 className="text-yellow-300 font-bold text-2xl">Recommended Movies</h1>
+      <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
+        global blockbusters.<br />This are movies you dont won't want to miss.
       </p>
-      <MovieRow query="Nigerian action movies" title="Action" />
+    <MovieRow title="" fetchQuery="African comedy" />
       </div>
 
-       <div>
-        <h1 >Recommended Movies</h1>
-      <p>Handpicked just for you from the hottest Nollywood hits to
-        global blockbusters.This are movies you dont won't want to miss.
+       <div className="text-center w-full flex flex-col gap-3 bg-amber-600 pt-17 mb-3.5">
+      <h1 className="text-yellow-300 font-bold text-2xl">Recommended Movies</h1>
+      <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
+        global blockbusters.<br />This are movies you dont won't want to miss.
       </p>
-      <MovieRow query="Nigerian romance movies" title="Romance" />
+      <MovieRow title="" fetchQuery="Nollywood action movies" />
       </div>
+      <JoinCommunity />
       
     </div>
   );

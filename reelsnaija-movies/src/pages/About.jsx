@@ -1,11 +1,18 @@
 // pages/About.jsx
+import React from "react";
+import JoinCommunity from "../components/Community";
+import Hero from "../components/Hero";
+
+
+
 export default function About() {
   return (
-    <section className="px-6 py-12 max-w-4xl mx-auto">
+    <section className=" w-full">
+      <Hero />
       <h1 className="text-3xl font-bold mb-6">About ReelNaija</h1>
 
       <p className="mb-6 text-gray-300">
-        At <span className="font-semibold">ReelNaija</span>, we believe African stories deserve a global stage.  
+        At <span className="font-semibold text-yellow-300">ReelNaija</span>, we believe African stories deserve a global stage.  
         From Nollywood blockbusters to timeless African classics and trending world hits,  
         we connect you with movies that inspire, entertain, and spark conversation.
       </p>
@@ -23,6 +30,7 @@ export default function About() {
           making it easier for movie lovers to explore, enjoy, and share.
         </p>
       </div>
+      <JoinCommunity />
     </section>
   );
 }

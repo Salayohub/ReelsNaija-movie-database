@@ -1,7 +1,15 @@
 // pages/Contact.jsx
+import React from "react";
+import Hero from "../components/Hero";
+import JoinCommunity from "../components/Community";
+
+
+
+
 export default function Contact() {
   return (
-    <section className="px-6 py-12 max-w-3xl mx-auto">
+    <section className="w-full">
+      <Hero />
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       <p className="mb-8 text-gray-300">
         Got questions, feedback, or partnership ideas? We’d love to hear from you!  
@@ -34,6 +42,7 @@ export default function Contact() {
         <p>Phone: +234 800 123 4567</p>
         <p>Location: Lagos, Nigeria</p>
       </div>
+      <JoinCommunity />
     </section>
   );
 }

@@ -1,21 +1,14 @@
-// components/MovieCard.jsx
-export default function MovieCard({ video }) {
-  const { id, snippet } = video;
-  const videoId = id?.videoId;
-
+const MovieCard = ({ videoId, title, thumbnail }) => {
   return (
-    <div className=" w-64 bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-      {/* Thumbnail */}
+    <div className="cursor-pointer hover:scale-105 transition-transform">
       <img
-        src={snippet?.thumbnails?.medium?.url}
-        alt={snippet?.title}
-        className="w-full h-36 object-cover"
+        src={thumbnail}
+        alt={title}
+        className="rounded-lg w-full h-40 object-cover"
       />
-      {/* Details */}
-      <div className="p-3">
-        <h3 className="text-sm font-semibold line-clamp-2">{snippet?.title}</h3>
-        <p className="text-xs text-gray-400">{snippet?.channelTitle}</p>
-      </div>
+      <h3 className="text-sm mt-2 text-white line-clamp-2">{title}</h3>
     </div>
   );
-}
+};
+
+export default MovieCard;

@@ -1,20 +1,16 @@
-// utils/youtube.js
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+const BASE_URL = "https://www.googleapis.com/youtube/v3";
 
-export async function searchVideos(query, maxResults = 12) {
+export const searchVideos = async (query, maxResults = 10) => {
   try {
     const res = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=${maxResults}&q=${encodeURIComponent(
-        query
-      )}&key=${API_KEY}`
+      `${BASE_URL}/search?part=snippet&q=${query}&type=video&maxResults=${maxResults}&key=${API_KEY}`
     );
-
     if (!res.ok) throw new Error("Failed to fetch videos");
-
     const data = await res.json();
     return data.items;
-  } catch (err) {
-    console.error("YouTube API Error:", err);
-    throw err;
+  } catch (error) {
+    console.error("YouTube API error:", error);
+    return [];
   }
-}
+};
