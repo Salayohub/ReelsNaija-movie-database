@@ -9,7 +9,7 @@ import JoinCommunity from "../components/Community";
 export default function Contact() {
   return (
     <section className="w-full">
-     <div className="bg-[url(../banner1.png)] h-80 bg-cover bg-center bg-no-repeat mb-11">
+     <div className="bg-[url(/banner1.png)] h-80 bg-cover bg-center bg-no-repeat mb-11">
          </div>
 
       <div className="w-full text-center">  

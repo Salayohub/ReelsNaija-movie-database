@@ -22,7 +22,7 @@ export default function Navbar() {
         {/* Logo */}
       <Link to="/" className="basis-1/5 md:basis-1/5 lg:basis-1/5">
       <img 
-      src="../reelslogo.png"
+      src="/reelslogo.png"
       alt="reelsnaija logo"
       className="h-25 w-auto" 
       />

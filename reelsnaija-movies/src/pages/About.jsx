@@ -8,11 +8,11 @@ import JoinCommunity from "../components/Community";
 export default function About() {
   return (
     <section className=" w-full">
-      <div className="bg-[url(../banner3.png)] h-80 bg-cover bg-center bg-no-repeat mb-11">
+      <div className="bg-[url(/banner3.png)] h-80 bg-cover bg-center bg-no-repeat mb-11">
          </div>
       <h1 className="text-amber-300 text-5xl text-center font-bold mb-6">About ReelNaija</h1>
 
-      <p className="mb-6 text-gray-300  text-center md:px-80">
+      <p className="mb-6 text-gray-300  text-center md:px- lg:px-50">
         At <span className="font-semibold text-yellow-300  ">ReelNaija</span>, we believe African stories deserve a global stage.  
         At ReelNaija, we believe great stories deserve to be seen, shared, and celebrated. Born from a love for African cinema and a passion for world-class storytelling, our platform connects movie lovers across Nigeria and the African continent with films that inspire, entertain, and spark conversation.
 Whether it’s the latest Nollywood hit, a timeless African classic, or a trending blockbuster from across the globe, we handpick and recommend movies that match your taste. Our team is dedicated to curating diverse genres — from heartwarming dramas and laugh-out-loud comedies to edge-of-your-seat thrillers and mind-bending adventures.
@@ -23,7 +23,7 @@ But ReelNaija is more than just a movie recommendation site — it’s a growing
         We’re more than just a recommendation site. ReelNaija is a growing community of film lovers across Nigeria  
         and Africa, <br />helping you discover your next favorite movie — one recommendation at a time.
       </p>
-<div className="flex gap-10 mb-5 ">
+<div className="flex gap-10 mb-5 md:px- lg:px-50">
       <div className="mt-8 bg-none p-6 border rounded-lg shadow-md">
         <h2 className="text-xl font-bold mb-4">🎯 Our Mission</h2>
         <p className="text-gray-300">

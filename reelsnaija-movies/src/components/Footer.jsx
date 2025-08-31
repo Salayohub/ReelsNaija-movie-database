@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Logo + About */}
         <div>
           {logo ? (
-            <img src='../public/reelslogo.png' alt="ReelNaija Logo" className="h-50 mb-4" />
+            <img src='/reelslogo.png' alt="ReelNaija Logo" className="h-50 mb-4" />
           ) : null}
           <p className="text-sm text-white">
             ReelNaija brings you the best of Nollywood and African cinema,

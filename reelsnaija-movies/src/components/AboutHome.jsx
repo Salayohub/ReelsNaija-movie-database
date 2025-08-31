@@ -4,7 +4,7 @@ export default function AboutHome() {
     return(
         <div className=" mt-2.5 p-4 flex flex-wrap justify-start items-center gap-15 ">
             <div className=" w-full md:basis-2/5 bg-amber-300 ">
-                <img src="../public/banner2.png" alt=""  className="w-full h-full object-cover rounded-lg shadow-lg"/>
+                <img src="/banner2.png" alt=""  className="w-full h-full object-cover rounded-lg shadow-lg"/>
             </div>
             <div className="w-full md:basis-2/5 gap- flex flex-wrap">
                 <h2 className="font-bold text-2xl">About ReelsNaija</h2>
