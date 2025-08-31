@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Hero />
       <AboutHome />
-      <div className="text-center w-full flex flex-col gap-15 py-3 pt-17 mb-3.5 border rounded-2xl">
+      <div className="text-center w-full flex flex-col gap-15 py-3 pt-17  mb-3.5 border rounded-2xl">
       <h1 className="text-yellow-300 font-bold text-2xl">Recommended For You</h1>
       <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
         global blockbusters.<br />This are movies you dont won't want to miss.
@@ -39,7 +39,7 @@ export default function Home() {
 
 
        <div className="text-center w-full flex flex-col gap-15 py-3 pt-17 mb-3.5 border rounded-2xl">
-      <h1 className="text-yellow-300 font-bold text-2xl">Nigeria Comedy</h1>
+      <h1 className="text-yellow-300 font-bold text-2xl">Comedy Series</h1>
       <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
         global blockbusters.<br />This are movies you dont won't want to miss.
       </p>

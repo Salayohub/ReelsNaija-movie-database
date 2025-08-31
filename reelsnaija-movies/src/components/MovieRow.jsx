@@ -45,7 +45,7 @@ const MovieRow = ({ query, title }) => {
       {/* Movies Row */}
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-4"
+        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-4 pb-3"
       >
         {videos.map((video) => (
           <div key={video.id?.videoId || video.id} className="min-w-[220px] flex-shrink-0">
