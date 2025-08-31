@@ -1,82 +1,66 @@
-import { useEffect, useState } from "react";
-import { searchVideos } from "../utils/youtube";
+import { useEffect, useRef, useState } from "react";
+import { USE_MOCK_DATA } from "../config";
+import { mockVideos } from "../mockData";
+import { searchVideos } from "../utils/Youtube";
 import MovieCard from "./MovieCard";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // install lucide-react if not already
 
-const MovieRow = ({ title, fetchQuery }) => {
+const MovieRow = ({ query, title }) => {
   const [videos, setVideos] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const videosPerPage = 4; // show 4 per page on large screens
+  const scrollRef = useRef(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const results = await searchVideos(fetchQuery, 20); // fetch 20 videos
-      setVideos(results);
-    };
-    fetchData();
-  }, [fetchQuery]);
+    if (USE_MOCK_DATA) {
+      setVideos(mockVideos);
+    } else {
+      searchVideos(query).then(setVideos).catch(console.error);
+    }
+  }, [query]);
 
-  // Pagination logic
-  const indexOfLastVideo = currentPage * videosPerPage;
-  const indexOfFirstVideo = indexOfLastVideo - videosPerPage;
-  const currentVideos = videos.slice(indexOfFirstVideo, indexOfLastVideo);
-  const totalPages = Math.ceil(videos.length / videosPerPage);
+  // Scroll left or right
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount =
+        direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+
+      scrollRef.current.scrollTo({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   return (
-    <div className="mb-12 px-4">
-      <h2 className="text-xl font-bold mb-5 text-white">{title}</h2>
+    <div className="relative group">
+      {title && (
+        <h2 className="text-xl font-bold text-yellow-400 mb-3 px-4">{title}</h2>
+      )}
 
-      {/* Responsive Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {currentVideos.length > 0 ? (
-          currentVideos.map((video) => (
-            <MovieCard
-              key={video.id.videoId}
-              videoId={video.id.videoId}
-              title={video.snippet.title}
-              thumbnail={video.snippet.thumbnails.medium.url}
-            />
-          ))
-        ) : (
-          <p className="text-gray-400">No videos found</p>
-        )}
+      {/* Left Arrow */}
+      <button
+        onClick={() => scroll("left")}
+        className="hidden group-hover:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black text-white p-2 rounded-full"
+      >
+        <ChevronLeft size={24} />
+      </button>
+
+      {/* Movies Row */}
+      <div
+        ref={scrollRef}
+        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-4"
+      >
+        {videos.map((video) => (
+          <div key={video.id?.videoId || video.id} className="min-w-[220px] flex-shrink-0">
+            <MovieCard video={video} />
+          </div>
+        ))}
       </div>
 
-      {/* Pagination */}
-      {totalPages > 1 && (
-        <div className="flex justify-center mt-6 space-x-2">
-          <button
-            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-            disabled={currentPage === 1}
-            className="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
-          >
-            Prev
-          </button>
-
-          {[...Array(totalPages)].map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentPage(i + 1)}
-              className={`px-3 py-1 rounded ${
-                currentPage === i + 1
-                  ? "bg-red-600 text-white"
-                  : "bg-gray-700 text-gray-200"
-              }`}
-            >
-              {i + 1}
-            </button>
-          ))}
-
-          <button
-            onClick={() =>
-              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-            }
-            disabled={currentPage === totalPages}
-            className="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
-          >
-            Next
-          </button>
-        </div>
-      )}
+      {/* Right Arrow */}
+      <button
+        onClick={() => scroll("right")}
+        className="hidden group-hover:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black text-white p-2 rounded-full"
+      >
+        <ChevronRight size={24} />
+      </button>
     </div>
   );
 };

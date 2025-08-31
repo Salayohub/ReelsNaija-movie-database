@@ -1,49 +1,76 @@
-// components/Footer.jsx
-import React from "react";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const logo =
+    "https://via.placeholder.com/150x50?text=ReelNaija"; // replace with your logo asset
+
   return (
-    <footer className="bg-yellow-500 pt-10 pb-5 grid gap-26 w-full items-center ">
-      
-      
-      <div className="flex flex-wrap ">
-
-       <div className="w-full md:basis-2/5 pr-10 "><img src="../public/reelslogo.png" alt="footerlogo" className="h-50 w-50" /></div> 
-       
-        <div className=" w-full md:basis-3/5 justify-evenly md:flex flex-wrap  pt-10 pl-10">
-
-        <div className="mb-5"> <p className="text-red-500 font-bold underline text-xl">Menu</p>
-          <a href="/privacy" className="hover:text-red-500">Privacy Policy</a>
-          <br /><a href="/about" className="hover:text-red-500">About Us</a><br />
-          <a href="/contact" className="hover:text-red-500">Contact</a>
+    <footer className="bg-yellow-500 text-gray-300 mt-10">
+      {/* Top Section */}
+      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Logo + About */}
+        <div>
+          {logo ? (
+            <img src='../public/reelslogo.png' alt="ReelNaija Logo" className="h-50 mb-4" />
+          ) : null}
+          <p className="text-sm text-white">
+            ReelNaija brings you the best of Nollywood and African cinema,
+            keeping you entertained with movie picks you’ll love.
+          </p>
         </div>
-     
 
-      
-        <div className="mb-5"> <p className="text-red-500 font-bold underline text-xl">Menu</p>
-          <a href="/privacy" className="hover:text-red-500">Privacy Policy</a>
-          <br /><a href="/about" className="hover:text-red-500">About Us</a><br />
-          <a href="/contact" className="hover:text-red-500">Contact</a>
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-2 text-sm text-white">
+            <li>
+              <Link to="/" className="hover:text-red-400">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-red-400">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-red-400">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link to="/privacy" className="hover:text-red-400">
+                Privacy Policy
+              </Link>
+            </li>
+          </ul>
         </div>
-      
-      
 
-      <div className="mb-5">
-        <h2 className="font-bold underline text-xl mb-3">Follow us on social media</h2>
-        <p>Your gateway to amazing african and global stories.<br />
-        stay connected with us and never miss an update</p>
-        <div className="flex mt-8">
-          <img src="" alt="fb" />
-          <img src="" alt="ig" />
-          <img src="" alt="tw" />
+        {/* Newsletter */}
+        <div>
+          <h3 className="text-white font-semibold mb-4">Join Our Community</h3>
+          <form className="flex flex-col sm:flex-row sm:items-center border">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full sm:flex-1 px-3 py-2 bg-amber-50 rounded-lg border-b-2 text-gray-900 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="mt-3 sm:mt-0 sm:ml-2 px-4 py-2 bg-red-600 rounded-lg hover:bg-green-500 text-white font-medium"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
-      </div>
 
-      
-    </div>
-      <p className="text-gray-400 text-center text-sm">© {new Date().getFullYear()} ReelNaija. All rights reserved.</p>
+      {/* Bottom Bar */}
+      <div className="bg-gray-800 py-4">
+        <div className="max-w-7xl mx-auto px-6 text-center text-sm text-gray-400">
+          © {new Date().getFullYear()} ReelNaija. All rights reserved.
+        </div>
+      </div>
     </footer>
   );
 }

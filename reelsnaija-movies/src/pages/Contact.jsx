@@ -9,14 +9,21 @@ import JoinCommunity from "../components/Community";
 export default function Contact() {
   return (
     <section className="w-full">
-      <Hero />
-      <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+     <div className="bg-[url(../banner1.png)] h-80 bg-cover bg-center bg-no-repeat mb-11">
+         </div>
+
+      <div className="w-full text-center">  
+      <h1 className="text-amber-300 text-5xl text-center font-bold mb-6">Contact Us</h1>
       <p className="mb-8 text-gray-300">
-        Got questions, feedback, or partnership ideas? We’d love to hear from you!  
+        Got questions, feedback, or partnership ideas? We’d love to hear from you! <br />  
         Fill out the form below or reach us directly.
       </p>
+      </div> 
 
-      <form className="grid gap-6">
+    <div className=" w-full flex justify-center items-center pb-24">
+
+      <div className="basis-1/3 p-5 border rounded-lg"> <h2 className="text-amber-300 text-3xl text-center font-bold mb-6">  Fill Out The Form Below</h2>
+      <form className="grid gap-6 ">
         <input
           type="text"
           placeholder="Your Name"
@@ -36,11 +43,14 @@ export default function Contact() {
           Send Message
         </button>
       </form>
-
-      <div className="mt-10 text-gray-400 text-sm">
+</div>
+      <div className="mt-10 text-white-400 text-sm pl-20 text-centerbasis-1/3 mb-10">
+      <h2 className="text-amber-300 text-3xl text-center font-bold mb-6">Reach Us Directly</h2>
         <p>Email: support@reelnaija.com</p>
         <p>Phone: +234 800 123 4567</p>
         <p>Location: Lagos, Nigeria</p>
+      </div>
+
       </div>
       <JoinCommunity />
     </section>
