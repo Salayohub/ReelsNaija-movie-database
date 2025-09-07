@@ -13,37 +13,35 @@ export default function Home() {
       <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
         global blockbusters.<br />This are movies you dont won't want to miss.
       </p>
-      <MovieRow query="Trending Nollywood" title="" />
-      <MovieRow query="Epic Nollywood Movies" title="" />
+      <MovieRow type="trending" title="Trending Now" />
+      <MovieRow type="popular" title="Popular Now" />
       </div>
 
       <div className="text-center w-full flex flex-col gap-15 py-3 pt-17 mb-3.5">
-      <h1 className="text-yellow-300 font-bold text-2xl">Latest Yoruba Movies</h1>
-      <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
-        global blockbusters.<br />This are movies you dont won't want to miss.
+      <h1 className="text-yellow-300 font-bold text-2xl">Latest Romance Movies</h1>
+      <p>
       </p>
-      <MovieRow query="Yoruba Movies" title=""  />
+      <MovieRow type="top_rated" title="Top Rated" />
+      <MovieRow type="romance" title="Romantic Movies" />
       </div>
 
       <DiscoveryBanner />
 
      <div className="text-center w-full flex flex-col gap-15 py-3 pt-10 mb-6">
   <h1 className="text-yellow-300 font-bold text-2xl">Recommended Romance</h1>
-  <p className="text-xs">
-    Handpicked just for you from the hottest Nollywood hits to global blockbusters.
-    <br />These are movies you won’t want to miss.
+  <p >
   </p>
- <MovieRow query="Romantic Nollywood Movies" title="" />
+ <MovieRow type="comedy" title="Comedy Movies" />
 
 </div>
 
 
        <div className="text-center w-full flex flex-col gap-15 py-3 pt-17 mb-3.5 border rounded-2xl">
       <h1 className="text-yellow-300 font-bold text-2xl">Comedy Series</h1>
-      <p className="text-xs ">Handpicked just for you from the hottest Nollywood hits to
-        global blockbusters.<br />This are movies you dont won't want to miss.
+      <p >Handpicked just for you from the hottest Nollywood hits to
       </p>
-      <MovieRow query="Nigerian Comedy" title="" />
+      <MovieRow type="action" title="Action Movies" />
+
       </div>
       <JoinCommunity />
       

@@ -1,27 +1,17 @@
 import { Link } from "react-router-dom";
-import { getVideoId } from "../utils/normalizeVideo";
 
-const MovieCard = ({ video }) => {
-  const videoId = getVideoId(video);
+const MovieCard = ({ movie }) => {
+  const poster = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+    : "https://via.placeholder.com/320x180";
 
   return (
-    <div className="relative bg-gray-800 w-[220px] aspect-[4/6] rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-      <Link to={`/video/${videoId}`}>
-        {/* Thumbnail */}
-        <img
-          src={video.snippet?.thumbnails?.medium?.url || "https://via.placeholder.com/320x180"}
-          alt={video.snippet?.title || "Untitled Video"}
-          className="w-full h-full object-cover"
-        />
-
-        {/* Overlay */}
-        <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-80 text-black py-2 px-2">
-          <h3 className="truncate font-semibold text-sm">
-            {video.snippet?.title || "Untitled Video"}
-          </h3>
-          <p className="text-xs text-red-600 truncate">
-            {video.snippet?.channelTitle || "Unknown Channel"}
-          </p>
+    <div className="bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+      <Link to={`/movie/${movie.id}`}>
+        <img src={poster} alt={movie.title} className="w-full h-64 object-cover" />
+        <div className="p-2 text-white">
+          <h3 className="truncate font-semibold text-sm">{movie.title}</h3>
+          <p className="text-xs text-gray-400">{movie.release_date?.slice(0, 4)}</p>
         </div>
       </Link>
     </div>

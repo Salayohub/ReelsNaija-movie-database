@@ -1,6 +1,6 @@
 // hooks/useYoutubeSearch.js
 import { useEffect, useState } from "react";
-import { searchVideos } from "../utils/Youtube";
+import { searchMovies } from "../utils/tmdb"; // Assume this utility exists
 
 export default function useYoutubeSearch(query) {
   const [videos, setVideos] = useState([]);
@@ -13,7 +13,7 @@ export default function useYoutubeSearch(query) {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const data = await searchVideos(query);
+        const data = await searchMovies(query);
         setVideos(data);
         setError(null);
       } catch (err) {

@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import SearchResults from "./pages/SearchResults";
-import VideoDetail from "./pages/VideoDetail";
+import MovieDetail from "./pages/MovieDetail";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 
@@ -17,7 +17,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<SearchResults />} />
-            <Route path="/video/:id" element={<VideoDetail />} />
+            <Route path="/movie/:id" element={<MovieDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
           </Routes>
