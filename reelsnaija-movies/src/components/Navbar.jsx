@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-yellow-500 w-full px-4 sticky top-0 z-50">
+    <nav className="bg-yellow-500 w-full md:px-30 sm:px-8  sticky top-0 z-50">
       <div className="flex items-center justify-between md:justify-normal">
         {/* Logo */}
       <Link to="/" className="basis-1/5 md:basis-1/5 lg:basis-1/5">
@@ -30,7 +30,7 @@ export default function Navbar() {
 
       {/* Hamburger Button (visible on small screens) */}
       <button
-        className=" md:hidden  text-white text-4xl border p-2 rounded hover:bg-red-500"
+        className=" md:hidden  text-white text-4xl border p-2  mx-2rounded hover:bg-red-500"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? "✖" : "☰"}

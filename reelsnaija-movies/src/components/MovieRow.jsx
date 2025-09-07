@@ -48,7 +48,7 @@ const MovieRow = ({ query, title }) => {
         className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-4 pb-3"
       >
         {videos.map((video) => (
-          <div key={video.id?.videoId || video.id} className="min-w-[220px] flex-shrink-0">
+          <div key={video.id?.videoId || video.id} className="min-w-[200px] flex-shrink-0">
             <MovieCard video={video} />
           </div>
         ))}

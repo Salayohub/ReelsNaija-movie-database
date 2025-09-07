@@ -23,7 +23,7 @@ But ReelNaija is more than just a movie recommendation site — it’s a growing
         We’re more than just a recommendation site. ReelNaija is a growing community of film lovers across Nigeria  
         and Africa, <br />helping you discover your next favorite movie — one recommendation at a time.
       </p>
-<div className="flex gap-10 mb-5 md:px- lg:px-50">
+<div className="md:flex md:space-x-6 md:px-20 lg:px-40 my-10">
       <div className="mt-8 bg-none p-6 border rounded-lg shadow-md">
         <h2 className="text-xl font-bold mb-4">🎯 Our Mission</h2>
         <p className="text-gray-300">
